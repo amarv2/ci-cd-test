@@ -11,4 +11,5 @@ phases:
 artifacts:
   files:
     - build/**/*
-    - aws s3 sync . s3://ci-cd-test-host
+  commands:
+    - aws s3 sync . s3://ci-cd-test-host/project
