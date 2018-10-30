@@ -8,8 +8,9 @@ phases:
   build:
     commands:
       - npm run build
+  post_build:
+    commands:
+      - aws s3 sync . s3://ci-cd-test-host
 artifacts:
   files:
     - build/**/*
-  commands:
-    - aws s3 sync . s3://ci-cd-test-host
