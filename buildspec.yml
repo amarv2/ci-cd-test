@@ -10,8 +10,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - ls
-      - aws s3 sync ./build/ s3://ci-cd-test-host/ --delete --acl public-read
+      - aws s3 sync ./build/ s3://ci-cd-test-host --delete --acl public-read
 artifacts:
   files:
     - build/**/*
