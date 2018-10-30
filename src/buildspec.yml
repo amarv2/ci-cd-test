@@ -10,5 +10,5 @@ phases:
       - npm run build
 artifacts:
   files:
-    - build*/**
+    - build/**/*
     - aws s3 sync --delete ./build "s3://ci-cd-test-host"
