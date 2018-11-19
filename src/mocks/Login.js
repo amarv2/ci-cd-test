@@ -1,5 +1,5 @@
 export default
 {
-    adminUsername: 'admin',
-    adminPassword: 'admin'
+  adminUsername: 'admin',
+  adminPassword: 'admin',
 };

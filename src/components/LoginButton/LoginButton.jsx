@@ -1,25 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import './LoginButton.css';
+import styles from '../../App.module.scss';
 
-class LoginButton extends Component {
-    render() {
-        if (this.props.loggingIn) {
+const LoginButton = ({ buttonText }) => (
+  <button type="submit" className={styles.confirmationButton}>
+    {buttonText}
+  </button>
+);
 
-            return (
-                
-            <button type="submit" className="login-button">
-                <i class="fas fa-spinner" />
-            </button>
-        );
-        }
-            return (
-                <button type="submit" className="login-button">
-                    {this.props.buttonText}
-                </button>
-            )
-        }
-    }
-
+LoginButton.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+};
 
 export default LoginButton;

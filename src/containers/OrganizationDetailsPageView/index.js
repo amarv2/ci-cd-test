@@ -1,0 +1,3 @@
+import OrganizationDetailsPageViewContainer from './OrganizationDetailsPageViewContainer';
+
+export default OrganizationDetailsPageViewContainer;

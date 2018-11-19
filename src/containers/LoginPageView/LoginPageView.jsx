@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
+import PropTypes from 'prop-types';
+
 import LoginForm from '../../components/LoginForm';
-import { history } from '../../utils/History/history';
-import { authUser } from '../../selectors/AuthSelector';
-import './LoginPageView.css';
+import history from '../../utils/History/history';
+
+import styles from './LoginPageView.module.scss';
 
 class LoginPageView extends Component {
-    componentWillMount() {
-        if (this.props.loggedIn) {
-            history.push('/');
-        }
+  componentWillMount() {
+    if (this.props.loggedIn) {
+      history.push('/');
     }
+  }
 
-    render() {
-        return (
-            <div className="login-page-view">
-                <LoginForm />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className={styles.loginPageView}>
+        <LoginForm />
+      </div>
+    );
+  }
 }
 
-function mapStateToProps(state) {
-    const { loggingIn, loggedIn } = authUser(state);
-    return {
-        loggingIn,
-        loggedIn
-    };
-}
+LoginPageView.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+};
 
-const connectedPageView = connect(mapStateToProps)(LoginPageView);
-export { connectedPageView as LoginPageView };
+export default LoginPageView;
