@@ -8,7 +8,7 @@ function mapDispatchToProps(dispatch) {
       const {
         name, surname, email, githubHandle,
       } = values;
-      const organizationName = window.location.href.split('/')[4];
+      const organizationName = decodeURI(window.location.href.split('/')[4]);
       dispatch({
         type: 'userConstants.CREATE_USER_REQUEST',
         payload: {

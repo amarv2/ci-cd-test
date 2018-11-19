@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch) {
       dispatch({ type: 'userConstants.TOGGLE_CONFIRMATION_MODAL', modalCategory });
     },
     blockUser: (selectedUser) => {
-      const organizationName = window.location.href.split('/')[4];
+      const organizationName = decodeURI(window.location.href.split('/')[4]);
       const {
         id, name, surname, email, githubHandle,
       } = selectedUser;

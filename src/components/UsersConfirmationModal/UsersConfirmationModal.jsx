@@ -12,8 +12,8 @@ import BlockUserModalView from '../ConfirmationModalContent/BlockUserModal';
 import UnblockUserModal from '../ConfirmationModalContent/UnblockUserModal';
 
 class UsersConfirmationModal extends React.Component {
-    toggleConfirmationModal = (category) => {
-      this.props.toggleConfirmationModal(category);
+    toggleConfirmationModal = () => {
+      this.props.toggleConfirmationModal('none');
     }
 
     checkModalCategory = () => {

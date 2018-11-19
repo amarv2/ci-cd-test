@@ -31,8 +31,11 @@ class SideMenu extends Component {
               onClick={() => { this.menuToggler(); }}
             />
             <SideNav.Nav defaultSelected="home">
-              <NavItem eventKey="home">
-                <NavIcon>
+              <NavItem
+                eventKey="home"
+                className={styles.sideNavIcon}
+              >
+                <NavIcon className={styles.sideNavIcon}>
                   <i
                     className="fa fa-fw fa-home"
                     style={{
@@ -48,6 +51,7 @@ class SideMenu extends Component {
                 onClick={(e) => {
                   this.logoutUser(e);
                 }}
+                className={styles.sideNavIcon}
               >
                 <NavIcon>
                   <i
@@ -59,6 +63,14 @@ class SideMenu extends Component {
                 </NavIcon>
                 <NavText>
                     Logout
+                </NavText>
+              </NavItem>
+              <NavItem className={styles.sideNavIcon}>
+                <NavIcon>
+                  <img src="/images/monogram_small_knockedoff_black.svg" alt="Yewno small logo" />
+                </NavIcon>
+                <NavText>
+                    Yewno Sandbox Admin
                 </NavText>
               </NavItem>
             </SideNav.Nav>

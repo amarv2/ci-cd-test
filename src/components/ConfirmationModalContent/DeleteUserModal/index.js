@@ -11,10 +11,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     toggleConfirmationModal: (modalCategory) => {
-      dispatch({ type: 'userConstants.TOGGLE_CONFIRMATION_MODAL', modalCategory });
+      dispatch({ type: 'userConstants.TOGGLE_CONFIRMATION_MODAL', payload: { modalCategory } });
     },
     deleteUser: (id) => {
-      const organizationName = window.location.href.split('/')[4];
+      const organizationName = decodeURI(window.location.href.split('/')[4]);
       dispatch({ type: 'userConstants.DELETE_USER_REQUEST', payload: { id, organizationName } });
     },
     getOrganizationDetails: (organizationName) => {

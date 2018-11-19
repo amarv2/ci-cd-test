@@ -8,7 +8,7 @@ const initialState = selectedUser
     status: Status.INIT,
     selectedUser,
     confirmationModalOpen: false,
-    modalCategory: '',
+    modalCategory: 'none',
   }
   : {};
 

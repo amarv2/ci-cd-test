@@ -5,3 +5,22 @@
 .sideNavToggler{
   float: right !important;
 }
+
+.sideNavIcon {
+  div {
+    color: white;
+    div {
+      opacity: 1 !important;
+    }
+  }
+}
+
+.sideNavIcon:nth-child(3) {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  img {
+    width: 60%;
+  }
+}

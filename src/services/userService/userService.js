@@ -15,18 +15,19 @@ async function getUserById(organizationName, userId) {
 
 
 async function createUser(name, surname, email, githubHandle, organizationName) {
+  const organizations = store.getState().organizationOverview.organization;
+  const indexOfOrganization = organizations.map((e) => e.organizationName)
+    .indexOf(organizationName);
+  const organizationUsers = organizations[indexOfOrganization].users;
+  const newUserId = organizationUsers.length - 1;
   const newUser = {
-    id: 4,
+    id: newUserId + 1,
     name,
     surname,
     email,
     githubHandle,
     active: true,
   };
-  const organizations = store.getState().organizationOverview.organization;
-  const indexOfOrganization = organizations.map((e) => e.organizationName)
-    .indexOf(organizationName);
-  const organizationUsers = organizations[indexOfOrganization].users;
   await new Promise((resolve) => {
     setTimeout(resolve, 100, organizationUsers.push(newUser));
   });

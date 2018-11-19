@@ -11,8 +11,12 @@ const OrganizationDetails = ({ data, urlParams }) => {
   if (organizationData) {
     return (
       <div className="container">
-        <h1>{data.organizationName}</h1>
-        <Link className={`${styles.confirmationButton} mt-4 d-inline`} to={`/organizations/${urlParams}/users/new`}>Create new user</Link>
+        <div className="d-flex justify-content-between align-items-center my-4">
+          <h1>{data.organizationName}</h1>
+          <Link to={`/organizations/${urlParams}/users/new`} className={`${styles.addNew}`}>
+            <i className="fas fa-plus-circle" />
+          </Link>
+        </div>
         <p className="mt-3">{data.email}</p>
         {data.users && data.users.length ? (
           <UsersTable data={data} urlParams={urlParams} />
